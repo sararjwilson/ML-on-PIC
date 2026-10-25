@@ -1,0 +1,33 @@
+# 2D vacuum Maxwell test for WSINDy. No particles, so J = 0.
+# Run:  warpx inputs_vacuum     (older builds: warpx.2d inputs_vacuum)
+
+max_step = 400
+amr.n_cell = 128 128
+amr.max_level = 0
+geometry.dims = 2
+geometry.prob_lo = -128e-6 -128e-6      # (x, z)
+geometry.prob_hi =  128e-6  128e-6      # dx = dz = 2 um
+boundary.field_lo = periodic periodic
+boundary.field_hi = periodic periodic
+
+algo.maxwell_solver = yee
+warpx.cfl = 0.95
+algo.particle_shape = 1
+particles.species_names =
+
+# Initial fields: E = 0, B built to be divergence free.
+#  - blob 1 (Bx, Bz) = curl of A_y  -> excites the Ey, Bx, Bz family
+#  - blob 2 (By)                     -> excites the Ex, Ez, By family
+my_constants.w  = 20e-6
+my_constants.B0 = 1.0
+warpx.B_ext_grid_init_style = parse_B_ext_grid_function
+warpx.Bx_external_grid_function(x,y,z) = "B0*(z+20e-6)/w*exp(-((x+40e-6)^2+(z+20e-6)^2)/w^2)"
+warpx.Bz_external_grid_function(x,y,z) = "-B0*(x+40e-6)/w*exp(-((x+40e-6)^2+(z+20e-6)^2)/w^2)"
+warpx.By_external_grid_function(x,y,z) = "B0*(x-30e-6)/w*exp(-((x-30e-6)^2+(z-40e-6)^2)/w^2)"
+
+diagnostics.diags_names = diag1
+diag1.intervals = 2                      # -> ~200 snapshots
+diag1.diag_type = Full
+diag1.format = openpmd
+diag1.openpmd_backend = h5
+diag1.fields_to_plot = Ex Ey Ez Bx By Bz

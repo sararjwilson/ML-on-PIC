@@ -1,0 +1,30 @@
+ 0: amrex::BLBackTrace::print_backtrace_info(__sFILE*) (in libamrex_1d.dylib) + 64
+
+ 1: amrex::BLBackTrace::handler(int) (in libamrex_1d.dylib) + 648
+
+ 2: amrex::Assert_host(char const*, char const*, int, char const*, unsigned long) (in libamrex_1d.dylib) + 304
+
+ 3: ablastr::utils::TextMsg::Assert(char const*, char const*, int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> const&) (in warpx.1d) + 188
+
+ 4: PlasmaInjector::setupNuniformPerCell(amrex::ParmParse const&) (in warpx.1d) + 228
+
+ 5: PlasmaInjector::PlasmaInjector(int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> const&, amrex::Geometry const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> const&) (in warpx.1d) + 1416
+
+ 6: PhysicalParticleContainer::PhysicalParticleContainer(amrex::AmrCore*, int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> const&) (in warpx.1d) + 472
+
+ 7: MultiParticleContainer::MultiParticleContainer(amrex::AmrCore*) (in warpx.1d) + 552
+
+ 8: WarpX::WarpX() (in warpx.1d) + 1376
+
+ 9: WarpX::MakeWarpX() (in warpx.1d) + 344
+
+10: WarpX::GetInstance() (in warpx.1d) + 40
+
+11: main (in warpx.1d) + 68
+
+12: start (in dyld) + 6992
+
+
+===== TinyProfilers ======
+main()
+

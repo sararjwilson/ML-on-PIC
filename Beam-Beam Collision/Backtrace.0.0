@@ -1,0 +1,27 @@
+ 0: amrex::BLBackTrace::print_backtrace_info(__sFILE*) (in libamrex_3d.dylib) + 64
+
+ 1: amrex::BLBackTrace::handler(int) (in libamrex_3d.dylib) + 648
+
+ 2: amrex::Error_host(char const*, char const*) (in libamrex_3d.dylib) + 228
+
+ 3: amrex::FileOpenFailed(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> const&) (in libamrex_3d.dylib) + 136
+
+ 4: amrex::ParallelDescriptor::ReadAndBcastFile(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> const&, amrex::Vector<char, std::__1::allocator<char>>&, bool, int const&) (in libamrex_3d.dylib) + 276
+
+ 5: amrex::(anonymous namespace)::read_file(char const*, std::__1::unordered_map<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>, amrex::ParmParse::PP_entry, std::__1::hash<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>>, std::__1::equal_to<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>>, std::__1::allocator<std::__1::pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> const, amrex::ParmParse::PP_entry>>>&) (in libamrex_3d.dylib) + 660
+
+ 6: amrex::ParmParse::Initialize(int, char**, char const*) (in libamrex_3d.dylib) + 764
+
+ 7: amrex::Initialize(int&, char**&, bool, int, std::__1::function<void ()> const&, std::__1::basic_ostream<char, std::__1::char_traits<char>>&, std::__1::basic_ostream<char, std::__1::char_traits<char>>&, void (*)(char const*), int) (in libamrex_3d.dylib) + 1636
+
+ 8: warpx::initialization::amrex_init(int&, char**&, bool) (in warpx.3d) + 120
+
+ 9: warpx::initialization::initialize_external_libraries(int, char**) (in warpx.3d) + 56
+
+10: main (in warpx.3d) + 36
+
+11: start (in dyld) + 6992
+
+
+===== TinyProfilers ======
+

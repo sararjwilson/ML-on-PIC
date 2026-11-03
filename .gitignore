@@ -1,0 +1,18 @@
+# simulation output (regenerate with the scripts)
+run/
+diags/
+test/
+*.bin
+*.npz
+*.bp5
+plots/
+results/
+logs/
+*_coefs.csv
+*_fit.csv
+Backtrace.*
+warpx_used_inputs
+# compiled binaries and caches
+wsindy_maxwell
+__pycache__/
+.DS_Store

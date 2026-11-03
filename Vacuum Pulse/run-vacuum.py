@@ -18,6 +18,7 @@ if rundir.exists():
     shutil.rmtree(rundir)
 rundir.mkdir()
 
+
 print("Using:", exe)
 subprocess.run([exe, str(inputs)], cwd=rundir, check=True)
 
